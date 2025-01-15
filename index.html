@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,400;1,100;1,300;1,400&family=Yuji+Mai&display=swap"
+      rel="stylesheet"
+    />
+    <title>Dashboard</title>
+  </head>
+  <ul class="nav justify-content-center w-100 bg-primary">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="./index.html"
+        >Dashboard</a
+      >
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="./home.html"
+        >Home Test</a
+      >
+    </li>
+  </ul>
+  <body
+    class="body d-flex flex-column justify-content-center align-items-center"
+  >
+    <fieldset
+      class="mb-5 border border-2 border-primary p-3 rounded-3 px-5 mt-5 justify-content-center align-items-center text-center"
+    >
+      <form
+        id="productForm"
+        class="form mb-3 d-flex justify-content-center align-items-center row align-items-center"
+      >
+        <div class="col mx-2">
+          <div class="row form-group">
+            <label for="ProductName" class="px-0 mb-1">Product Name</label>
+            <input
+              type="text"
+              id="ProductName"
+              onkeyup="nameValdation()"
+              placeholder="Product Name"
+              minlength="3"
+              maxlength="20"
+              required
+            />
+            <p class="text-danger d-none" id="productNameHint">
+              invaild Product Name hint (Should start with capital & more than 3
+              characters)
+            </p>
+          </div>
+          <div class="row mt-2 form-group">
+            <label for="ProductPrice" class="px-0 mb-1">Product Price</label>
+            <input
+              type="text"
+              id="ProductPrice"
+              onkeyup="priceValdation()"
+              placeholder="Product Price"
+              minlength="1"
+              maxlength="20"
+              required
+            />
+            <p class="text-danger d-none" id="productPriceHint">
+              invaild Product Price hint (Should be number and more than 0)
+            </p>
+          </div>
+          <div class="row mt-2 form-group">
+            <label for="ProductQuantity" class="px-0 mb-1"
+              >Product Quantity</label
+            >
+            <input
+              type="text"
+              id="ProductQuantity"
+              onkeyup="quantityValdation()"
+              placeholder="Product Quantity"
+              minlength="1"
+              maxlength="20"
+              required
+            />
+            <p class="text-danger d-none" id="productQuantityHint">
+              invaild Product Quantity hint (Should be number and more than 0)
+            </p>
+          </div>
+        </div>
+        <div class="col mx-2">
+          <div class="row mt-1 form-group">
+            <label for="ProductCategory" class="px-0 mb-1"
+              >Product Category</label
+            >
+            <input
+              type="text"
+              id="ProductCategory"
+              onkeyup="categoryValdation()"
+              placeholder="Product Category"
+              minlength="3"
+              maxlength="20"
+              required
+            />
+            <p class="text-danger d-none" id="productCategoryHint">
+              invaild Product Category hint (Should start with capital & more
+              than 3 characters)
+            </p>
+          </div>
+          <div class="row mt-2 form-group">
+            <label for="ProductDiscount" class="px-0 mb-1"
+              >Product Discount</label
+            >
+            <input
+              type="text"
+              id="ProductDiscount"
+              onkeyup="discountValdation()"
+              placeholder="000%"
+              minlength="1"
+              maxlength="4"
+              text="%"
+              required
+            />
+            <p class="text-danger d-none" id="productDiscountHint">
+              invaild Product Discount hint (Should be number end with %)
+            </p>
+          </div>
+          <div class="row mt-2 form-group">
+            <label for="ProductDescription" class="px-0 mb-1"
+              >Product Description</label
+            >
+            <input
+              type="text"
+              id="ProductDescription"
+              onkeyup="descriptionValdation()"
+              placeholder="Product Description"
+              minlength="3"
+              maxlength="100"
+              required
+            />
+            <p class="text-danger d-none" id="productDescriptionHint">
+              invaild Product Description hint (Should start with capital & more
+              than 3 characters)
+            </p>
+          </div>
+        </div>
+        <div class="row mt-2 mb-3form-group">
+          <label for="ProductImage" class="px-0 mb-1">Product Image</label>
+          <input
+            type="file"
+            id="ProductImage"
+            accept="image/*"
+            onchange="imageValidation()"
+            required
+          />
+          <p class="text-danger d-none" id="productImageHint">
+            Invalid Product Image (Only image files are allowed).
+          </p>
+        </div>
+        <div
+          class="row mt-3 justify-content-center text-center align-content-center"
+        >  
+          <button
+            class="alert alert-primary p-2 rounded-pill w-25 border border-1 border-primary bg-white mt-1 mb-4"
+            type="button"
+            onclick="addProduct(event)"
+            id="add"
+          >
+            Add Product
+          </button>
+        </div>
+      </form>
+
+      <button
+        class="btn p-2 rounded-pill w-50 border border-2 border-danger text-danger bg-white mt-3 mb-4"
+        type="button"
+        onclick="displayProducts()"
+        id="showProductsBtn"
+        data-bs-toggle="modal"
+        data-bs-target="#productModal"
+      >
+        Show Products
+      </button>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="productModal"
+        tabindex="-1"
+        aria-labelledby="productModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="productModalLabel">Product List</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <input
+                class="sea"
+                oninput="searchProduct(this.value)"
+                type="search"
+                id="search"
+                placeholder="Search Product"
+              />
+              <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Product Name</th>
+                      <th scope="col">Product Price</th>
+                      <th scope="col">Product Quantity</th>
+                      <th scope="col">Product Category</th>
+                      <th scope="col">Product Discount</th>
+                      <th scope="col">Product Description</th>
+                      <th scope="col">Product Image</th>
+                      <th scope="col">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="productTableBody">
+                    <!-- Products -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/jsf.js"></script>
+  </body>
+</html>

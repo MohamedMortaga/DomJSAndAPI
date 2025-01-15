@@ -1,0 +1,120 @@
+.form {
+  width: 800px;
+  color: #4171b6;
+}
+.nav:hover {
+    box-shadow: 0 0 10px #4171b6;
+}
+.nav a:active {
+  font-size: 15px;
+}
+fieldset:hover {
+  border: #3a6094;
+  box-shadow: 0 0 10px #4171b6;
+}
+.form input{
+  width: 100%; 
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px 
+  solid #4171b6;
+}
+.sea{
+  width: 70%;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #4171b6;
+}
+.form button {
+  color: #4171b6;
+}
+.form button:hover {
+  background: #4171b6 !important;
+  color: #f5f5f5;
+  border: 1px solid blue !important;
+}
+.form button:active {
+  box-shadow: 0 0 10px #4171b6;
+
+}
+.nav {
+  background-color: rgba(12, 80, 207, 0.6) !important;
+  padding: 10px;
+
+}
+.nav a {
+  color: white !important;
+}
+.nav a:hover {
+  color: #bccee8 !important;
+}
+.btn:hover {
+  background: rgb(225, 4, 4) !important;
+  color: white !important;
+}
+.btn:active {
+    box-shadow: 0 0 10px rgb(225, 4, 4) !important;
+  
+}
+
+@media (max-width: 931px) {
+    .modal-dialog {
+      width: 100%;
+      margin: 0;
+    }
+    .form{
+        width: 100%;
+    }
+  }
+
+  
+  #productContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  .card{
+    border: 1px solid #b1cbef !important;
+  }
+  .card:hover{
+    box-shadow: 0 0 10px #4171b6;
+  }
+  .home {
+    background-image: url(../images/bg2.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 85vh;
+  }
+  p{ 
+    font-size: 10px;
+  }
+  .hh{
+    font-size: 65px !important;
+  }
+  .ff{
+    font-size: 30px !important; 
+    color: #073677 !important;
+  }
+
+.swipper .imgb{
+  width: 570px;
+  height: 400px;
+}
+
+.swipper .imgs{
+  width: 100px;
+  height: 60px;
+}
+.btt{
+  width: 50px !important;
+  height: 50px !important;
+
+}
+.row{
+  padding: 0% !important;
+  margin: 0% !important;
+}
